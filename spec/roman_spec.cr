@@ -1,9 +1,16 @@
 require "./spec_helper"
 
+NUMBERS = {
+  1 => "I",
+  5 => "V",
+}
+
 describe Roman do
   # TODO: Write tests
 
-  it "can convert int to roman" do
-    roman(1).should eq "I"
+  NUMBERS.each do |d, r|
+    it "can convert int #{d} to roman #{r}" do
+      Roman.encode(d).should eq r
+    end
   end
 end
