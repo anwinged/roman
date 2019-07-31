@@ -1,8 +1,12 @@
 require "./spec_helper"
 
 NUMBERS = {
-  1 => "I",
-  5 => "V",
+     1 => "i",
+     3 => "iii",
+     4 => "iv",
+     5 => "v",
+    94 => "xciv",
+  3999 => "mmmcmxcix",
 }
 
 describe Roman do
