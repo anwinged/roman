@@ -1,4 +1,3 @@
-# TODO: Write documentation for `Roman`
 module Roman
   extend self
 
@@ -36,7 +35,3 @@ module Roman
     result
   end
 end
-
-num = ARGV[0].to_i32
-rom = Roman.encode(num)
-puts rom.upcase
