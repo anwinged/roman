@@ -1,0 +1,13 @@
+name: roman
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+targets:
+  roman:
+    main: src/roman.cr
+
+crystal: 0.29.0
+
+license: MIT
