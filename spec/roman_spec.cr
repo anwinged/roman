@@ -17,4 +17,10 @@ describe Roman do
       Roman.encode(d).should eq r
     end
   end
+
+  NUMBERS.each do |d, r|
+    it "can convert roman #{r} to int #{d}" do
+      Roman.decode(r).should eq d
+    end
+  end
 end

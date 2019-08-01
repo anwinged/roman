@@ -21,7 +21,7 @@ module Roman
 
   def encode(x) : String
     result = String.build do |s|
-      encode_gener(x) do |t|
+      encode_generator(x) do |t|
         s << t
       end
     end
@@ -40,5 +40,21 @@ module Roman
         r, a = POINTS[point_index]
       end
     end
+  end
+
+  def decode(x : String) : Int32
+    result = 0
+    point_index = 0
+    r, a = POINTS[point_index]
+    until x.empty?
+      if x.starts_with?(r)
+        result += a
+        x = x.lchop(r)
+      else
+        point_index += 1
+        r, a = POINTS[point_index]
+      end
+    end
+    result
   end
 end
