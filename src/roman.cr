@@ -34,4 +34,27 @@ module Roman
     end
     result
   end
+
+  def encode_sb(x) : String
+    result = String.build do |s|
+      encode_gener(x) do |t|
+        s << t
+      end
+    end
+    result
+  end
+
+  private def encode_gener(x, &block)
+    point_index = 0
+    r, a = POINTS[point_index]
+    while x > 0
+      if x >= a
+        yield r
+        x -= a
+      else
+        point_index += 1
+        r, a = POINTS[point_index]
+      end
+    end
+  end
 end
