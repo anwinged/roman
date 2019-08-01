@@ -20,22 +20,6 @@ module Roman
   ]
 
   def encode(x) : String
-    result = ""
-    point_index = 0
-    r, a = POINTS[point_index]
-    while x > 0
-      if x >= a
-        result += r
-        x -= a
-      else
-        point_index += 1
-        r, a = POINTS[point_index]
-      end
-    end
-    result
-  end
-
-  def encode_sb(x) : String
     result = String.build do |s|
       encode_gener(x) do |t|
         s << t
@@ -44,7 +28,7 @@ module Roman
     result
   end
 
-  private def encode_gener(x, &block)
+  private def encode_generator(x, &block)
     point_index = 0
     r, a = POINTS[point_index]
     while x > 0
