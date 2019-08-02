@@ -1,27 +1,19 @@
-# roman
+# Roman
 
-TODO: Write a description here
+Small script for roman number conversion.
 
-## Installation
-
-TODO: Write installation instructions here
+## Build
+	
+	$ ./cr build --release src/main.cr
 
 ## Usage
 
-TODO: Write usage instructions here
+	$ roman 10
+	<< X
 
-## Development
+	$ roman vii
+	<< 7
 
-TODO: Write development instructions here
+## Tests
 
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/roman/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
-## Contributors
-
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+	$ ./cr spec
