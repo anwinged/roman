@@ -20,12 +20,11 @@ module Roman
   ]
 
   def encode(x) : String
-    result = String.build do |s|
+    String.build do |s|
       encode_generator(x) do |t|
         s << t
       end
     end
-    result
   end
 
   private def encode_generator(x, &block)
@@ -59,6 +58,6 @@ module Roman
   end
 
   def roman?(x : String) : Bool
-    x.match(/^(m{0,3})(d?c{0,3}|c[dm])(l?x{0,3}|x[lc])(v?i{0,3}|i[vx])$/i) != nil
+    !x.match(/^(m{0,3})(d?c{0,3}|c[dm])(l?x{0,3}|x[lc])(v?i{0,3}|i[vx])$/i).nil?
   end
 end
